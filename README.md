@@ -4,20 +4,21 @@ Projet Arduino pour la surveillance environnementale
 Ce projet permet de surveiller l'environnement intérieur en mesurant la température, l'humidité, la pression atmosphérique, le niveau de CO2 et le niveau sonore.
 
 Matériel nécessaire :
-- Arduino MKR1310
-- Capteur de température, humidité et pression BME280
-- Capteur de CO2 COZIR-LP-5000
-- Capteur sonore SEN0487
-- Écran E-Ink 2,9"
-- Panneau solaire avec ...
-- Batterie 1000 mAh
+- Arduino MKR1310 permettant une connexion LoraWan pour envoyer les données et les afficher en ligne sur Ubidots
+- Le capteur BME280 qui permet de récupérer la température, l'humidité et la pression
+- Le capteur de CO2 COZIR-LP-5000
+- Le capteur sonore SEN0487
+- Un écran E-Ink 2,9"
+- Deux panneaux solaires d'intérieur
+- Une batterie de 1000 mA
 
 Installation :
 
 Installez l'IDE Arduino sur votre ordinateur si ce n'est pas déjà fait.
+Créez un compte sur The Things Network (https://www.thethingsnetwork.org/) et Ubidots (https://ubidots.com/)
 Branchez les capteurs et l'écran E-Ink sur les broches correspondantes de l'Arduino MKR1310.
 
-Téléchargez et installez les bibliothèques nécessaires :
+Téléchargez et installez les bibliothèques nécessaires sur Aduino IDE :
 - Adafruit_Sensor.h
 - Adafruit_BME280.h
 - SparkFun_SCD30_Arduino_Library.h
@@ -25,13 +26,13 @@ Téléchargez et installez les bibliothèques nécessaires :
 - Adafruit_EPD.h
 - MKRWAN.h
 
-Ouvrez le fichier surveillance_env.ino dans l'IDE Arduino.
+Ouvrez le fichier code_pj2.ino dans l'IDE Arduino.
 Compilez et téléversez le code sur votre Arduino MKR1310.
 
 Utilisation :
 
-Le système mesure les données environnementales toutes les 5 secondes (plus longtemps la nuit pour économiser l'énergie) et affiche les valeurs sur l'écran E-Ink. Si le niveau de CO2 dépasse le seuil défini (1000 ppm), les données sont envoyées via LoRaWAN à un serveur distant pour être analysées.
-Les données peuvent être visualisées sur un dashboard TTN ou une application mobile.
+Le système mesure les données d'une salle de classe toutes les 10 minutes (la mesure se fait moins souvent la nuit pour économiser l'énergie) et affiche les valeurs sur l'écran E-Ink. Si le niveau de CO2 dépasse le seuil défini (2000 ppm) pendant 10 minutes, les données sont envoyées via LoRaWAN à un serveur distant pour être analysées.
+Les données peuvent être visualisées sur un dashboard Ubidots ou sur l'écran directement.
 
 Optimisation de la consommation d'énergie : 
 
