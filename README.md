@@ -5,7 +5,7 @@ Ce projet permet de surveiller l'environnement intérieur en mesurant la tempér
 
 Matériel nécessaire :
 - Arduino MKR1310 permettant une connexion LoraWan pour envoyer les données et les afficher en ligne sur Ubidots
-- Le capteur BME280 qui permet de récupérer la température, l'humidité et la pression
+- Le capteur BME280 qui permet de récupérer la température, l'humidité et la pression atmosphérique
 - Le capteur de CO2 COZIR-LP-5000
 - Le capteur sonore SEN0487
 - Un écran E-Ink 2,9"
@@ -16,15 +16,21 @@ Installation :
 
 Installez l'IDE Arduino sur votre ordinateur si ce n'est pas déjà fait.
 Créez un compte sur The Things Network (https://www.thethingsnetwork.org/) et Ubidots (https://ubidots.com/)
-Branchez les capteurs et l'écran E-Ink sur les broches correspondantes de l'Arduino MKR1310.
+Branchez les capteurs et l'écran E-Ink sur les broches correspondantes de l'Arduino MKR1310 en suivant le schéma suivant :
+
+![github-small](https://github.com/Jez-dlg/Monitoring_system_MMD/blob/main/sche%CC%81ma%20elec/sche%CC%81ma%20electrique.jpg)
 
 Téléchargez et installez les bibliothèques nécessaires sur Aduino IDE :
+- Wire.h
+- SPI.h
 - Adafruit_Sensor.h
 - Adafruit_BME280.h
-- SparkFun_SCD30_Arduino_Library.h
-- Adafruit_GFX.h
-- Adafruit_EPD.h
+- Arduino.h
+- cozir.h
+- Adafruit_ThinkInk.h
+- avr/dtostrf.h
 - MKRWAN.h
+- ArduinoLowPower.h
 
 Ouvrez le fichier code_pj2.ino dans l'IDE Arduino.
 Compilez et téléversez le code sur votre Arduino MKR1310.
