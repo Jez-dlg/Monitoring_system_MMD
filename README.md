@@ -12,6 +12,8 @@ Projet académique EI2I4 HF système de monitoring <br>
   - Un écran E-Ink 2,9"
   - Deux panneaux solaires d'intérieur
   - Une batterie de 1000 mA
+  - PCB
+  - Modèle 3D
 
 <B> Installation : </B>
 
@@ -39,14 +41,13 @@ Compilez et téléversez le code sur votre Arduino MKR1310.
 
   <B>Utilisation :</B>
 
-<Div Align=Justify>Le système mesure les données d'une salle de classe toutes les 10 minutes (la mesure se fait moins souvent la nuit pour économiser l'énergie) et affiche les valeurs sur l'écran E-Ink. Si le niveau de CO2 dépasse le seuil défini (2000 ppm) pendant 10 minutes, les données sont envoyées via LoRaWAN à un serveur distant pour être analysées. <br>
+<Div Align=Justify>Le système mesure les données d'une salle de classe toutes les 10 minutes et affiche les valeurs sur l'écran E-Ink. Si le niveau de CO2 dépasse le seuil défini (1200 ppm) pendant 10 minutes, des alertes sont aussi paramétrés pour la température et le niveau sonore. <br> Les données sont envoyées via LoRaWAN à un serveur distant pour être analysées. <br>
 Les données peuvent être visualisées sur un dashboard Ubidots ou sur l'écran directement. </Div>
 
 <br>
   <B>Optimisation de la consommation d'énergie :</B><br>
   
   Pour maximiser la durée de vie de la batterie et minimiser la consommation d'énergie, le système utilise les techniques suivantes :
-  - Attente plus longue la nuit pour économiser de l'énergie
   - Attente plus courte le jour pour réduire le temps de prise de mesure
   - Mise en veille du capteur de CO2 lorsqu'il n'est pas utilisé
   - Utilisation d'un écran E-Ink pour minimiser la consommation d'énergie
